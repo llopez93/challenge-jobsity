@@ -2,8 +2,8 @@ package challenge.jobsity.model.frame;
 
 public abstract class Frame {
 
-    protected Integer roll1 = null;
-    protected Integer roll2 = null;
+    protected Roll roll1 = null;
+    protected Roll roll2 = null;
 
     public Frame() {}
 
@@ -20,6 +20,7 @@ public abstract class Frame {
         return false;
     }
 
-    // abstract getPoints();
+    public abstract Integer getPinFalls();
+    public abstract String printScore();
 
 }

@@ -1,13 +1,24 @@
 package challenge.jobsity.model.frame;
 
 public class LastFrame extends Frame{
-    private Integer roll3;
+    private Roll roll3;
 
-    public LastFrame(Integer roll1, Integer roll2, Integer roll3) {
+    public LastFrame(Roll roll1, Roll roll2, Roll roll3) {
         super();
         this.roll1 = roll1;
         this.roll2 = roll2;
         this.roll3 = roll3;
+    }
+
+    @Override
+    public Integer getPinFalls() {
+        return 0;
+    }
+
+    @Override
+    public String printScore() {
+        // TODO: Ver como se escribe la puntuación
+        return "FINAL FRAME";
     }
 
     @Override

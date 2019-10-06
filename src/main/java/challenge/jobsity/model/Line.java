@@ -46,4 +46,8 @@ public class Line {
         return i != this.frames.size() - 1 ? this.frames.get(i+1) : null;
     }
 
+    public boolean isOnLastFrame(){
+        return this.frames.size() == 9;
+    }
+
 }

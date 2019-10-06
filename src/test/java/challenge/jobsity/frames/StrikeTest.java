@@ -2,6 +2,7 @@ package challenge.jobsity.frames;
 
 import challenge.jobsity.model.frame.Frame;
 import challenge.jobsity.model.frame.OpenFrame;
+import challenge.jobsity.model.frame.Roll;
 import challenge.jobsity.model.frame.Strike;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,13 +14,13 @@ public class StrikeTest {
 
     @Test
     public void isStrike() {
-        Frame s = new Strike(10);
+        Frame s = new Strike(new Roll(10,false));
         Assert.assertTrue( s.isStrike() );
     }
 
     @Test
     public void isNotStrike(){
-        Frame s = new OpenFrame(5,3);
+        Frame s = new OpenFrame(new Roll(5,false), new Roll(3,false));
         Assert.assertFalse( s.isStrike() );
     }
 }

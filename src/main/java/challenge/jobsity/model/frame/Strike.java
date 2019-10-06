@@ -1,11 +1,19 @@
 package challenge.jobsity.model.frame;
 
-import challenge.jobsity.model.frame.Frame;
-
 public class Strike extends Frame {
 
-    public Strike(Integer roll1) {
+    public Strike(Roll roll1) {
         this.roll1 = roll1;
+    }
+
+    @Override
+    public Integer getPinFalls() {
+        return this.roll1.getPinFalls() ;
+    }
+
+    @Override
+    public String printScore() {
+        return "  X";
     }
 
     @Override
