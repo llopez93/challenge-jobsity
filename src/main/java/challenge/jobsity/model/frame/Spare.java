@@ -14,7 +14,7 @@ public class Spare extends Frame {
 
     @Override
     public String printScore() {
-        return roll1.toString()+" /";
+        return roll1.toString()+"  /";
     }
 
     @Override

@@ -1,21 +1,21 @@
 package challenge.jobsity.model;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Game {
 
-    private Set<Line> lines;
+    private List<Line> lines;
 
     public Game() {
-        lines = new HashSet<>();
+        lines = new ArrayList<>();
     }
 
-    public Game(Set<Line> lines) {
+    public Game(List<Line> lines) {
         this.lines = lines;
     }
 
-    public Set<Line> getLines() {
+    public List<Line> getLines() {
         return lines;
     }
 

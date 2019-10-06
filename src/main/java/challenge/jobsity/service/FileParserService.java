@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface FileParserService {
 
-    public List<DataEntry> parseFile( File gameScore ) throws InvalidEntryFormatException, IOException;
+    List<DataEntry> parseFile( File gameScore ) throws InvalidEntryFormatException, IOException;
 }

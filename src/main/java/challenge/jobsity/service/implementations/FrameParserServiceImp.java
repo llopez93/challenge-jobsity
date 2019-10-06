@@ -1,18 +1,17 @@
 package challenge.jobsity.service.implementations;
 
+import challenge.jobsity.model.TenPinConstants;
 import challenge.jobsity.model.frame.*;
 import challenge.jobsity.model.parser.DataEntry;
 import challenge.jobsity.service.FrameParserService;
 
 public class FrameParserServiceImp implements FrameParserService {
 
-    private final int MAX_PIN_FALLs = 10;
-
     @Override
     public Frame parse(DataEntry roll1, DataEntry roll2) {
-        if ((roll1.getRoll().getPinFalls() == this.MAX_PIN_FALLs) || !(roll1.getPlayer().equals(roll2.getPlayer())))
+        if ((roll1.getRoll().getPinFalls() == TenPinConstants.MAX_PINES) || !(roll1.getPlayer().equals(roll2.getPlayer())))
             return this.parseStrike(roll1);
-        if (roll1.getRoll().getPinFalls() + roll2.getRoll().getPinFalls() == this.MAX_PIN_FALLs) {
+        if (roll1.getRoll().getPinFalls() + roll2.getRoll().getPinFalls() == TenPinConstants.MAX_PINES) {
             return new Spare(roll1.getRoll(), roll2.getRoll());
         }
         return new OpenFrame(roll1.getRoll(), roll2.getRoll());

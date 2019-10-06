@@ -5,9 +5,9 @@ import challenge.jobsity.model.parser.DataEntry;
 
 public interface FrameParserService {
 
-    public Frame parse(DataEntry roll1, DataEntry roll2);
+    Frame parse(DataEntry roll1, DataEntry roll2);
 
-    public Frame parseLastFrame(DataEntry roll1, DataEntry roll2, DataEntry roll3);
+    Frame parseLastFrame(DataEntry roll1, DataEntry roll2, DataEntry roll3);
 
-    public Frame parseStrike(DataEntry roll1);
+    Frame parseStrike(DataEntry roll1);
 }

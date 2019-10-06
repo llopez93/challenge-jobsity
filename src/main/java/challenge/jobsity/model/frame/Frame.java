@@ -23,4 +23,11 @@ public abstract class Frame {
     public abstract Integer getPinFalls();
     public abstract String printScore();
 
+    public Roll getFirstRoll() {
+        return roll1;
+    }
+    public Roll getSecondRoll() {
+        return roll2;
+    }
+
 }

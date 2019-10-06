@@ -7,6 +7,6 @@ import java.util.ArrayList;
 
 public interface GameParserService {
 
-    public Game parseGame(ArrayList<DataEntry> entries);
+    Game parseGame(ArrayList<DataEntry> entries);
 
 }

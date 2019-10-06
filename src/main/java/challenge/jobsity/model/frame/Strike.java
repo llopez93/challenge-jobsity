@@ -13,7 +13,7 @@ public class Strike extends Frame {
 
     @Override
     public String printScore() {
-        return "  X";
+        return "   X";
     }
 
     @Override

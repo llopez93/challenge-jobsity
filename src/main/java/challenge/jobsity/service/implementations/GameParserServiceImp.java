@@ -4,6 +4,7 @@ import challenge.jobsity.factory.ServiceFactory;
 import challenge.jobsity.model.Game;
 import challenge.jobsity.model.Line;
 import challenge.jobsity.model.Player;
+import challenge.jobsity.model.TenPinConstants;
 import challenge.jobsity.model.frame.Frame;
 import challenge.jobsity.model.parser.DataEntry;
 import challenge.jobsity.service.FrameParserService;
@@ -28,7 +29,7 @@ public class GameParserServiceImp implements GameParserService {
             DataEntry roll1 = entries.get(i);
             if (!onLastFrame(roll1.getPlayer(), game)) {
                 DataEntry roll2 = entries.get(i + 1);
-                if (this.areSamePlayer(roll1, roll2)) {
+                if (this.areSamePlayer(roll1, roll2) && (roll1.getRoll().getPinFalls() != TenPinConstants.MAX_PINES)) {
                     frame = frameParser.parse(roll1, roll2);
                     i = i + 2;
                 } else {

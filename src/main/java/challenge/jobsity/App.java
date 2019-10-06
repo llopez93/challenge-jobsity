@@ -1,17 +1,11 @@
 package challenge.jobsity;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args ) {
@@ -20,21 +14,16 @@ public class App
     }
 
     private Stream<String> readFile() {
-        boolean validInput = false;
 
-        while ( !validInput ){
-            System.out.println("Ingrese la ruta del archivo: ");
+        while ( true ){
+            System.out.println("Enter file path: ");
             Scanner in = new Scanner(System.in);
             String filePath = in.nextLine();
             try (Stream<String> lines = Files.lines(Paths.get(filePath))) {
                 return lines;
             } catch (IOException e) {
-                System.out.println("La ruta ingresada no es correcta, por favot vuelva a ingresarla");
-                validInput = false;
+                System.out.println("The path entered is invalid, please retry.");
             }
         }
-
-        return null;
-
     }
 }

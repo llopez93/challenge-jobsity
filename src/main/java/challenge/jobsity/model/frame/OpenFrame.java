@@ -14,7 +14,7 @@ public class OpenFrame extends Frame {
 
     @Override
     public String printScore() {
-        return roll1.toString().concat(" ").concat(roll2.toString());
+        return roll1.toString().concat("  ").concat(roll2.toString());
     }
 
     @Override
