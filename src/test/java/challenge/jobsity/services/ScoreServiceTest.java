@@ -14,9 +14,6 @@ import org.junit.Test;
 import java.io.File;
 import java.util.ArrayList;
 
-/**
- * Unit test for GameParserService class.
- */
 public class ScoreServiceTest {
 
     private GameParserService service;
