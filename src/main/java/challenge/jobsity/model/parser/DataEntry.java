@@ -5,6 +5,9 @@ import challenge.jobsity.model.Player;
 import challenge.jobsity.model.TenPinConstants;
 import challenge.jobsity.model.frame.Roll;
 
+/**
+ * A class to represent the format of the line read in file
+ */
 public class DataEntry {
 
     private Player player;
@@ -13,6 +16,12 @@ public class DataEntry {
     public DataEntry() {
     }
 
+    /**
+     * Convert a String and set the properties of the DataEntry class.
+     * @param value String to convert.
+     * @throws InvalidEntryFormatException If the format of the String not match with the specifitacion
+     * of method checkFormat( String value ).
+     */
     public void parseValue(String value) throws InvalidEntryFormatException{
         if ( this.checkFormat(value) ){
             String[] valueArray = value.split(" ");
@@ -23,6 +32,12 @@ public class DataEntry {
 
     }
 
+    /**
+     * Review the format of the string, that must have a word (a-z) follow by an space and a number minor
+     * than 11 or a letter "F" or "f". And in the end a new line.
+     * @param value String to check the format.
+     * @return True if the format is ok, false if not.
+     */
     public boolean checkFormat( String value ){
         if ( value.matches("^[a-zA-Z]+?\\s[\\d+|fF]+$") ){
             String pinFalls = value.split(" ")[1];

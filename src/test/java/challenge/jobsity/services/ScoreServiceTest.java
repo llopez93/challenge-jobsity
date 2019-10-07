@@ -23,6 +23,7 @@ public class ScoreServiceTest {
     private ScoreService scoreService;
     private ArrayList<DataEntry> normalGame;
     private ArrayList<DataEntry> perfectGame;
+    private ArrayList<DataEntry> twoPlayersPerfectGame;
     private ArrayList<DataEntry> onePlayerFoulGame;
     private ArrayList<DataEntry> twoPlayersFoulGame;
     private ArrayList<DataEntry> emptyGame;
@@ -37,6 +38,7 @@ public class ScoreServiceTest {
         this.onePlayerFoulGame = new ArrayList<>(fileParserService.parseFile(new File(ClassLoader.getSystemResource("one-player-foul-game.txt").getFile())));
         this.twoPlayersFoulGame = new ArrayList<>(fileParserService.parseFile(new File(ClassLoader.getSystemResource("two-player-foul-game.txt").getFile())));
         this.emptyGame = new ArrayList<>(fileParserService.parseFile(new File(ClassLoader.getSystemResource("empty-game.txt").getFile())));
+        this.twoPlayersPerfectGame = new ArrayList<>(fileParserService.parseFile(new File(ClassLoader.getSystemResource("two-players-perfect-game.txt").getFile())));
     }
 
     @Test
@@ -58,6 +60,16 @@ public class ScoreServiceTest {
 
         Assert.assertTrue( (g.getLines().size() == 1) &&
                 (g.getLines().get(0).getPlayer().equals( new Player("Carl"))) );
+    }
+
+    @Test
+    public void showScoreTwoPlayersPerfectGame() {
+        System.out.println("Show score for perfect game of two players: \n");
+        Game g = service.parseGame(twoPlayersPerfectGame);
+        scoreService.printGameScore(g);
+        System.out.println(" ");
+
+        Assert.assertTrue( (g.getLines().size() == 2));
     }
 
     @Test

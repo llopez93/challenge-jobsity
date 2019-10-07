@@ -20,7 +20,16 @@ public abstract class Frame {
         return false;
     }
 
+    /**
+     * Gives the score achieved in the frame.
+     * @return The score of the frame.
+     */
     public abstract Integer getPinFalls();
+
+    /**
+     * Gives a String with the score of the frame. The score have variations depending on the type of Frame.
+     * @return The score
+     */
     public abstract String printScore();
 
     public Roll getFirstRoll() {

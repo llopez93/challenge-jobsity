@@ -4,8 +4,6 @@ public class Roll {
     private int pinFalls;
     private boolean isFoul = false;
 
-    public Roll() { }
-
     public Roll(int pinFalls, boolean isFoul) {
         this.pinFalls = pinFalls;
         this.isFoul = isFoul;
