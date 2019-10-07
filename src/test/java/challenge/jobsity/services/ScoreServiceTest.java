@@ -90,6 +90,5 @@ public class ScoreServiceTest {
         System.out.println(" ");
 
         Assert.assertEquals( 0, g.getLines().size());
-
     }
 }

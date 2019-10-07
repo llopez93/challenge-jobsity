@@ -17,6 +17,7 @@ public class FileParserServiceImp implements FileParserService {
 
     @Override
     public List<DataEntry> parseFile(File gameScore) throws InvalidEntryFormatException, IOException {
+        System.out.println("Parsing file...");
         ArrayList<DataEntry> entries = new ArrayList<>(0);
         Stream<String> lines = Files.lines(Paths.get(gameScore.getAbsolutePath()));
         for (String line : lines.collect(Collectors.toList())) {

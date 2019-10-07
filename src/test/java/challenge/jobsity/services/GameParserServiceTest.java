@@ -33,6 +33,4 @@ public class GameParserServiceTest {
         Assert.assertTrue( (g.getLines().size() == 2) &&
                 (g.getLines().stream().allMatch(line -> line.getFrames().size()==10)) );
     }
-
-    //TODO: parsear un juego perfecto y un juego vacio;
 }

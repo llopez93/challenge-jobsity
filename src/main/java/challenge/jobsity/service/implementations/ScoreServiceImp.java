@@ -14,6 +14,7 @@ public class ScoreServiceImp implements ScoreService {
     @Override
     public void printGameScore(Game g) {
         if (g.getLines().size() > 0) {
+            System.out.println("Game score:\n");
             System.out.println(printLineFramesNumbers(g.getLines().get(0)));
             g.getLines().forEach(line -> {
                 System.out.println(line.getPlayer().toString());
